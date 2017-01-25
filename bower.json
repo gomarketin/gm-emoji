@@ -1,0 +1,21 @@
+{
+  "name": "gm-emoji",
+  "homepage": "https://github.com/gomarketin/gm-emoji",
+  "authors": [
+    "gomarketin <developer@gomarketin.com>"
+  ],
+  "description": "gomarketin emoji",
+  "main": "",
+  "keywords": [
+    "gomarketin",
+    "emoji"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
