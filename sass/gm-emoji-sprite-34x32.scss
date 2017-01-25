@@ -1,0 +1,42 @@
+/**
+ * Gomarketin Emoji
+ * Powered by: Google Noto Font
+ * https://www.gomarketin.com
+ */
+
+// Common variables / standards
+@import "partials/common";
+
+// variable to be used
+@import "partials/emoji-raw-list";
+
+// prefix for icon
+$emoji-prefix: "emoji_";
+
+//font icon sizes
+$emoji-width: 34px;
+$emoji-height: 32px;
+$xpos: 0;
+$ypos: 0;
+$emoji-in-row: 29;
+
+._gc_emoji {
+  display: inline-block;
+  vertical-align: top;
+  width: $emoji-width;
+  height: $emoji-height;
+  margin: 5px;
+  background-image: url("#{$live-path}/img/emoji-sprite-34x32.png");
+  @each $emo in $emoji-list {
+    $index: index($emoji-list, $emo);
+    $col: ($index - 1) % $emoji-in-row;
+    $row: (($index - 1) - $col) / $emoji-in-row;
+    $xpos: ($emoji-width * $col);
+    $ypos: ($emoji-height * $row);
+
+    &._#{$emo} {
+      // /* Row: #{$row}| Column: #{$col} */
+      background-position: -#{$xpos} -#{$ypos};
+    }
+  }
+}

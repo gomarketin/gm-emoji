@@ -1,0 +1,56 @@
+/**
+ * Gomarketin Emoji
+ * Powered by: Google Noto Font
+ * https://www.gomarketin.com
+ */
+// Common variables / standards
+@import "partials/common";
+// Emoji Symbol Map
+@import "partials/emoji-raw-list";
+// variable to be used
+$emoji-prefix: "emoji_";
+$emoji-type: "png";
+$emoji-define: "136x128";
+$xs-width: 18px;
+$xs-height: 18px;
+$sm-width: 32px;
+$sm-height: 32px;
+$md-width: 64px;
+$md-height: 64px;
+$lg-width: 128px;
+$lg-height: 128px;
+
+._gc_emoji {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 5px;
+
+  &._xs {
+    width: $xs-width;
+    height: $xs-height;
+  }
+
+  &._sm {
+    width: $sm-width;
+    height: $sm-height;
+  }
+
+  &._md {
+    width: $md-width;
+    height: $md-height;
+  }
+
+  &._lg {
+    width: $lg-width;
+    height: $lg-height;
+  }
+  @each $emo in $emoji-list {
+    &._#{$emo} {
+      background-image: inline-image("#{$emoji-type}/#{$emoji-define}/#{$emoji-prefix}#{$emo}.#{$emoji-type}");
+    }
+  }
+}
